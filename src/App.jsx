@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import ProductList from './ProductList';
+import store from './store';
+import { Provider } from 'react-redux';
 import './App.css';
 import AboutUs from './AboutUs';
 
@@ -12,7 +14,9 @@ function App() {
     setShowProductList(true);
   };
 
+
   return (
+    <Provider store={store}>
     <div className="app-container">
       <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
         <div className="background-image"></div>
@@ -35,7 +39,9 @@ function App() {
       <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
         <ProductList />
       </div>
+    
     </div>
+    </Provider>
   );
 }
 

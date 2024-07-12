@@ -19,7 +19,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-background-color: lightgrey;
+  background-image: url("https://pixabay.com/get/gc5fa896b961295a4a4585e7ec024008761e93579cb3ac64e40b10fdbb5c4ad8564f4db184a540d67130a249c83906cac2d49cdb6ef723b8873957697d5b954fe_1280.jpg");
+background-color: lightgray;
 }
 
 .content {
@@ -29,7 +30,7 @@ background-color: lightgrey;
   height: 100vh;
   width: 100vw;
  top: 100px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   background-color: rgba(0,0,0,0.5);
   gap: 20px;
 }
