@@ -19,7 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://pixabay.com/get/gaf38d68b4c2c35f0253d84a5385082c06d949de675447ad09a6f6d526b3a4e2bee775c53c061fbef08b55c7993cce30f912aa306222e88a363747047891f9445_1280.jpg");
+  background-image: url('/images/background.jpg');
 background-color: lightgray;
 }
 
