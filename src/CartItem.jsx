@@ -17,7 +17,7 @@ const Cart = ({ onContinueShopping }) => {
   };
 
   const handleContinueShopping = (e) => {
-   onContinueShopping();
+   
   };
   const handleCheckoutShopping = (e) => {
     alert('Functionality to be added for future reference');
@@ -29,10 +29,10 @@ const Cart = ({ onContinueShopping }) => {
   };
 
   const handleDecrement = (item) => {
-    if(item.quantity > 0) {
+    if(item.quantity > 1) {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity -1}));
     }else {
-      dispatch(removeItem ({name: item.name}));
+      dispatch(removeItem ({item}));
     }
   };
 
@@ -57,7 +57,7 @@ const Cart = ({ onContinueShopping }) => {
               <div className="cart-item-cost">{item.cost}</div>
               <div className="cart-item-quantity">
                 <button className="cart-item-button cart-item-button-dec" onClick={() => handleDecrement(item)}>-</button>
-                <span className="cart-item-quantity-value"></span>
+                <span className="cart-item-quantity-value">{item.quantity} </span>
                 <button className="cart-item-button cart-item-button-inc" onClick={() => handleIncrement(item)}>+</button>
               </div>
               <div className="cart-item-total">Total: ${calculateTotalCost(item)}</div>

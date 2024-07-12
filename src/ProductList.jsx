@@ -3,11 +3,12 @@ import './ProductList.css'
 import { addItem } from './CreatSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Cart from './CartItem';
+import { getItems } from './CreatSlice';
 function ProductList() {
   const [addedToCart, setAddedToCart] = useState({});
   const [showCart, setShowCart] = useState (false);
-    const dispatch = useDispatch ();
-  
+  const dispatch = useDispatch ();
+  const items = useSelector(getItems);
   const handleAddToCart = (product) => {
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
@@ -263,8 +264,8 @@ function ProductList() {
             </div>
         </div>
         {showCart ? (
-        <Cart onContinueShopping={handleContinueShopping} />
-      ) : (
+        <Cart/>
+    ) : (  
         <div className="product-grid">
         {plantsArray.map ((category, index) => (
             <div key={index}>
