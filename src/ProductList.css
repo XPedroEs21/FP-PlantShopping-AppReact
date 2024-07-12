@@ -19,6 +19,8 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    position: relative;
+    z-index: 1000;
 }
 
 .navbar .ul {
@@ -163,6 +165,8 @@ body {
 .cart{
     color: white;
     display: flex;
+
+
 }
 .cart_quantity_count{
     margin-top: 16px;
