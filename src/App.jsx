@@ -5,16 +5,21 @@ import store from './store';
 import { Provider } from 'react-redux';
 import './App.css';
 import AboutUs from './AboutUs';
+import Cart from './CartItem';
 
 function App() {
   
   const [showProductList, setShowProductList] = useState(false);
-
+  const [showCart, setShowCart] = useState (false);
   const handleGetStartedClick = () => {
     setShowProductList(true);
   };
-
-
+  const handleCart = () => {
+    setShowCart(true);
+  };
+const handleProducts = () =>  {
+    setShowCart(false);
+};
   return (
     <Provider store={store}>
     <div className="app-container">
@@ -37,10 +42,14 @@ function App() {
 
       </div>
       <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList />
+      {showCart ? (
+        <Cart onContinueShopping={handleProducts} />
+      ) : (
+        <ProductList onGoToCart={handleCart}/>
+      )}
       </div>
-    
-    </div>
+
+        </div>
     </Provider>
   );
 }
