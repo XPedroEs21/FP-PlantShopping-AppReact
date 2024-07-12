@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductList from './ProductList';
 import store from './store';
 import { Provider } from 'react-redux';
@@ -22,6 +23,7 @@ const handleProducts = () =>  {
 };
   return (
     <Provider store={store}>
+      <Router>
     <div className="app-container">
       <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
         <div className="background-image"></div>
@@ -48,8 +50,8 @@ const handleProducts = () =>  {
         <ProductList onGoToCart={handleCart}/>
       )}
       </div>
-
         </div>
+        </Router>
     </Provider>
   );
 }
